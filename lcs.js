@@ -26,8 +26,6 @@ if (argumentsMoves.length <= 1 || (argumentsMoves.length - 2) % 2 == 0) {
     if (valueArr.some((item, indx) =>{return valueArr.indexOf(item) != indx}) == true) {
         console.log('Arguments must be different. Example: rock paper scissors')
     }else {
-        let key = new KeyNew()
-        let keyComputer = key.generationKey()
         function selectionСomputer(amount) {
             return Math.floor(Math.random() * amount)
         }
@@ -36,6 +34,8 @@ if (argumentsMoves.length <= 1 || (argumentsMoves.length - 2) % 2 == 0) {
                 input: process.stdin,
                 output: process.stdout
             })
+            let key = new KeyNew()
+            let keyComputer = key.generationKey()
             let choiceСomputer = selectionСomputer(amountMoves) + 1
             let sequence = keyComputer + argumentsMoves[choiceСomputer]
             let countHMAC = new Hmac(sequence)
